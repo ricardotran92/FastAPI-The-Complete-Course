@@ -85,3 +85,12 @@ select * from todos;
 delete from todos where id = 4;
 select * from todos;
 ```
+
+## Alembic
+
+|Alembic Command|Details|
+|---|---|
+|alembic init <folder name>|Initializes a new, generic environment|
+|alembic revision -m <message>|Creates a new revision of the environment|
+|alembic upgrade <revision #>|Run our upgrade migration to our database|
+|alembic downgrade -1| Run our downgrade migration to our database|

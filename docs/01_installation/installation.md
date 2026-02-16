@@ -90,12 +90,18 @@ my_project/
 
 ### Cài package
 ```bash
-poetry add fastapi "uvicorn[standard]" sqlalchemy passlib bcrypt==4.0.1 python-multipart "python-jose[cryptography]"
+poetry add fastapi "uvicorn[standard]" sqlalchemy passlib bcrypt==4.0.1 python-multipart "python-jose[cryptography]" psycopg2-binary alembic pytest httpx pytest-asyncio
 ```
 
 > passlib, bcrypt: hash password
 > python-multipart: submit forms to application
 > "python-jose[cryptography]": some functions to return a professional JWT back to the client
+> psycopg2-binary: connection to PostgreSQL
+> alembic: lightweight database migration tools for when using SQLAlchemy to alter existed database.
+> pytest: testing
+> httpx: a way to be able to dynamically call URLs and API endpoints automatically through a library.
+> pytest-asyncio: cope with error 'Failed: async def functions are not natively supported.'.
+
 
 ### Cài dev dependency
 ```bash
@@ -283,3 +289,40 @@ Nếu bạn muốn, mình có thể viết thêm:
 - Template crawler (Selenium + Playwright + Poetry)
 - Template Docker + Poetry
 
+
+---
+
+## TodoApp
+
+```bash
+./myproject/TodoApp (main)
+$ alembic init alembic
+Creating directory .\myproject\TodoApp\alembic ...  done
+Creating directory .\myproject\TodoApp\alembic\versions ...  done
+Generating .\myproject\TodoApp\alembic.ini ...  done
+Generating .\myproject\TodoApp\alembic\env.py ...  done
+Generating .\myproject\TodoApp\alembic\README ...  done
+Generating .\myproject\TodoApp\alembic\script.py.mako ...  done
+Please edit configuration/connection/logging settings in .\myproject\TodoApp\alembic.ini before proceeding.
+(myproject-py3.13)
+```
+
+alembic revision -m "Create phone number for user column"
+
+```bash
+./FastAPI-The-Complete-Course/myproject/TodoApp (main)
+$ alembic revision -m "Create phone number for user column"
+Generating .\myproject\TodoApp\alembic\versions\6fa63925ef43_create_phone_number_for_user_column.py ...  done
+(myproject-py3.13) 
+```
+edit 6fa63925ef43_create_phone_number_for_user_column.py
+alembic upgrade 6fa63925ef43
+
+```bash
+./myproject/TodoApp (main)
+$ alembic upgrade 6fa63925ef43
+INFO  [alembic.runtime.migration] Context impl PostgresqlImpl.
+INFO  [alembic.runtime.migration] Will assume transactional DDL.
+INFO  [alembic.runtime.migration] Running upgrade  -> 6fa63925ef43, Create phone number for user column
+(myproject-py3.13) 
+```

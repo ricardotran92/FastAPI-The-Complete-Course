@@ -1,5 +1,5 @@
 # models.py is a way for SQLAlchemy to understand what kind of database tables we are creating within database
-from database import Base # Importing Base class from database.py to create ORM models
+from .database import Base # Importing Base class from database.py to create ORM models
 from sqlalchemy import Column, Integer, String, Boolean, ForeignKey
 
 
@@ -26,6 +26,7 @@ class Users(Base):
     hashed_password = Column(String)
     is_active = Column(Boolean, default=True)
     role = Column(String)
+    phone_number = Column(String)
 
 
 

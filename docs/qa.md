@@ -66,3 +66,12 @@ What does JWT stand for?
 JWT is used when:
 → *Sending Authorization / Information Exchange*
 
+
+## 13. Project 3.5 - Alembic Data Migration
+
+What is Alembic?
+→ *Lightweight database migration tool*
+
+What is a database migration tool?
+→ *Transfer and upgrade resources within a database*
+
