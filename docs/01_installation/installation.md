@@ -84,6 +84,13 @@ my_project/
 └── tests/
 ```
 
+### Core python
+
+If you do not use the default system python (e.g python 3.12.x), using other python (e.g. version 3.10.11), please use following syntax to set up
+```bash
+poetry env use "C:\Python\Python310\python310.exe"
+```
+
 ---
 
 ## 6. Quản lý thư viện
@@ -102,6 +109,13 @@ poetry add fastapi "uvicorn[standard]" sqlalchemy passlib bcrypt==4.0.1 python-m
 > httpx: a way to be able to dynamically call URLs and API endpoints automatically through a library.
 > pytest-asyncio: cope with error 'Failed: async def functions are not natively supported.'.
 
+```bash
+poetry install aiofiles jinja2
+```
+
+> aiofiles:
+> jinja2: able to use HTML files
+
 
 ### Cài dev dependency
 ```bash
@@ -113,17 +127,22 @@ poetry add pytest --group dev
 
 ## 7. Virtual Environment với Poetry
 
-Put env inside the project (instead C:\Users\`<user>`\AppData\Local\pypoetry\Cache\virtualenvs)
+Put env inside the project (instead C:\Users\user\AppData\Local\pypoetry\Cache\virtualenvs)
 
 ```bash
 poetry config virtualenvs.in-project true
 ```
+> Condition to create env in project: not already be created in default directory. If yes, please delete existed one in default project
 
 ### Kích hoạt env
 ```bash
 poetry self add poetry-plugin-shell
 poetry shell
 poetry env info
+```
+If there is no '.env' or '.venv' at bash line. please use
+```bash
+source .venv/Scripts/activate
 ```
 
 ### Chạy lệnh trong env

@@ -1,4 +1,4 @@
-from fastapi import APIRouter, Depends, HTTPException # Import APIRouter to create a router for authentication endpoints
+from fastapi import APIRouter, Depends, HTTPException, Request # Import APIRouter to create a router for authentication endpoints
 from pydantic import BaseModel
 from ..models import Users
 from passlib.context import CryptContext
@@ -9,6 +9,7 @@ from starlette import status
 from fastapi.security import OAuth2PasswordRequestForm, OAuth2PasswordBearer
 from jose import jwt, JWTError
 from datetime import timedelta, datetime, timezone
+from fastapi.templating import Jinja2Templates
 
 
 router = APIRouter(
@@ -53,7 +54,19 @@ db_dependency = Annotated[Session, Depends(get_db)]
     # Depends is Dependency Injection, which allows us to define dependencies for our path operation functions
     # Dependency Injection means FastAPI will do something before and after the function is called (like creating and closing a database session)
 
+templates = Jinja2Templates(directory="TodoApp/templates")
 
+
+### Pages ###
+@router.get("/login-page")
+def render_login_page(request:Request):
+    return templates.TemplateResponse("login.html", {"request": request})
+
+@router.get("/register-page")
+def render_register_page(request:Request):
+    return templates.TemplateResponse("register.html", {"request": request})
+
+### Endpoints ###
 def authenticate_user(username: str, password: str, db):
     user = db.query(Users).filter(Users.username == username).first()
     if not user:

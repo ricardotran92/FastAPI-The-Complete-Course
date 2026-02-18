@@ -1,0 +1,47 @@
+{% include 'layout.html' %}
+
+<body class="bg-light">
+<div class="container py-5">
+    <div class="row justify-content-center">
+    <div class="col-md-6 col-lg-5">
+        <div class="card shadow-sm">
+        <div class="card-header text-center fw-bold">Login</div>
+
+        <div class="card-body">
+            <form id="loginForm">
+            <div class="mb-3">
+                <label class="form-label">Username</label>
+                <input
+                type="text"
+                class="form-control"
+                name="username"
+                autocomplete="username"
+                required
+                />
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Password</label>
+                <input
+                type="password"
+                class="form-control"
+                name="password"
+                autocomplete="current-password"
+                required
+                />
+            </div>
+
+            <div class="d-grid">
+                <button type="submit" class="btn btn-primary">Login</button>
+            </div>
+            </form>
+        </div>
+
+        <div class="card-footer text-center text-muted">
+            <a href="/auth/register-page">Register?</a>
+        </div>
+        </div>
+    </div>
+    </div>
+</div>
+

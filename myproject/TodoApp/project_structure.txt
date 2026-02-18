@@ -1,0 +1,94 @@
+Folder PATH listing for volume Data
+Volume serial number is 6FD7-E780
+D:.
+|   alembic.ini
+|   cli.py
+|   database-c11.py
+|   database.py
+|   main-c09.py
+|   main.py
+|   models.py
+|   project_structure.txt
+|   todos-c09.db
+|   todosapp-c11.db
+|   todo_cli.ipynb
+|   __init__.py
+|   
++---alembic
+|   |   env.py
+|   |   README
+|   |   script.py.mako
+|   |   
+|   +---versions
+|   |   |   6fa63925ef43_create_phone_number_for_user_column.py
+|   |   |   
+|   |   \---__pycache__
+|   |           6fa63925ef43_create_phone_number_for_user_column.cpython-313.pyc
+|   |           
+|   \---__pycache__
+|           env.cpython-313.pyc
+|           
++---routers
+|   |   admin.py
+|   |   auth.py
+|   |   todos-c10.py
+|   |   todos.py
+|   |   users.py
+|   |   __init__.py
+|   |   
+|   \---__pycache__
+|           admin.cpython-313.pyc
+|           auth.cpython-313.pyc
+|           todos.cpython-313.pyc
+|           users.cpython-313.pyc
+|           __init__.cpython-313.pyc
+|           
++---static
+|   |   .DS_Store
+|   |   
+|   +---css
+|   |       base.css
+|   |       bootstrap.css
+|   |       
+|   \---js
+|           base.js
+|           bootstrap.js
+|           bootstrap.js.map
+|           jquery-3.0.0-slim.js
+|           jquery-slim.js
+|           popper.js
+|           popper.min.js.map
+|           
++---templates
+|       home.html
+|       layout.html
+|       login.html
+|       register.html
+|       
++---test
+|   |   test_admin.py
+|   |   test_auth.py
+|   |   test_example.py
+|   |   test_main.py
+|   |   test_todos.py
+|   |   test_users.py
+|   |   utils.py
+|   |   __init__.py
+|   |   
+|   \---__pycache__
+|           test_admin.cpython-313-pytest-9.0.2.pyc
+|           test_auth.cpython-313-pytest-9.0.2.pyc
+|           test_example.cpython-313-pytest-9.0.2.pyc
+|           test_main.cpython-313-pytest-9.0.2.pyc
+|           test_todos.cpython-313-pytest-9.0.2.pyc
+|           test_users.cpython-313-pytest-9.0.2.pyc
+|           utils.cpython-313.pyc
+|           __init__.cpython-313.pyc
+|           
+\---__pycache__
+        database.cpython-312.pyc
+        database.cpython-313.pyc
+        main.cpython-313.pyc
+        models.cpython-313.pyc
+        __init__.cpython-313.pyc
+        

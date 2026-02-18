@@ -1,0 +1,114 @@
+{% include 'layout.html' %}
+
+<div class="container py-5">
+    <div class="row justify-content-center">
+    <div class="col-lg-8 col-md-10">
+        <div class="card shadow-sm">
+        <div class="card-header text-center fw-bold">Register</div>
+
+        <div class="card-body">
+            <form id="registerForm" class="row g-3">
+            <!-- Email + Username -->
+            <div class="col-md-6">
+                <label class="form-label">Email</label>
+                <input
+                type="email"
+                class="form-control"
+                name="email"
+                required
+                />
+            </div>
+
+            <div class="col-md-6">
+                <label class="form-label">Username</label>
+                <input
+                type="text"
+                class="form-control"
+                name="username"
+                required
+                />
+            </div>
+
+            <!-- First + Last Name -->
+            <div class="col-md-6">
+                <label class="form-label">First Name</label>
+                <input
+                type="text"
+                class="form-control"
+                name="firstname"
+                required
+                />
+            </div>
+
+            <div class="col-md-6">
+                <label class="form-label">Last Name</label>
+                <input
+                type="text"
+                class="form-control"
+                name="lastname"
+                required
+                />
+            </div>
+
+            <!-- Role + Phone -->
+            <div class="col-md-6">
+                <label class="form-label">Role</label>
+                <input
+                type="text"
+                class="form-control"
+                name="role"
+                required
+                />
+            </div>
+
+            <div class="col-md-6">
+                <label class="form-label">Phone Number</label>
+                <input
+                type="text"
+                class="form-control"
+                name="phone_number"
+                autocomplete="tel"
+                required
+                />
+            </div>
+
+            <!-- Password -->
+            <div class="col-12">
+                <label class="form-label">Password</label>
+                <input
+                type="password"
+                class="form-control"
+                name="password"
+                autocomplete="new-password"
+                required
+                />
+            </div>
+
+            <div class="col-12">
+                <label class="form-label">Verify Password</label>
+                <input
+                type="password"
+                class="form-control"
+                name="password2"
+                autocomplete="new-password"
+                required
+                />
+            </div>
+
+            <!-- Button -->
+            <div class="col-12">
+                <button type="submit" class="btn btn-primary w-100">
+                Sign in
+                </button>
+            </div>
+            </form>
+        </div>
+
+        <div class="card-footer text-center text-muted">
+            <a href="/auth/login-page">Already have an account?</a>
+        </div>
+        </div>
+    </div>
+    </div>
+</div>
+
